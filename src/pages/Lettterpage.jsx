@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { supabase } from "../superbase-client";
 import QRCode from "react-qr-code";
-import { FaDownload, FaHeart, FaArrowLeft, FaCheckCircle, FaInstagram, FaTiktok, FaMagic } from "react-icons/fa";
+import { FaDownload, FaHeart, FaArrowLeft, FaCheckCircle, FaInstagram, FaTiktok, FaMagic , FaWhatsapp } from "react-icons/fa";
 import { Navbar } from "../component/navbar";
 import '../styles/LetterPage.css';
 
@@ -154,6 +154,9 @@ function LetterPage() {
                                     </a>
                                     <a href="https://tiktok.com/@job.emmanuel.dev" target="_blank" rel="noreferrer" className="social-btn tiktok">
                                         <FaTiktok /> TikTok
+                                    </a>
+                                    <a href="https://wa.me/2349122865246" target="_blank" rel="noreferrer" className="social-btn whatsapp">
+                                        <FaWhatsapp /> WhatsApp
                                     </a>
                                 </div>
                             </div>

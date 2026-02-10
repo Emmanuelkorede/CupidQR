@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FaMoon, FaSun, FaUserCircle, FaTimes , FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaMoon, FaSun, FaUserCircle, FaTimes , FaInstagram, FaTiktok ,FaWhatsapp } from "react-icons/fa";
 
 import '../styles/navbar.css'
 
@@ -65,6 +65,9 @@ export function Navbar() {
         </a>
         <a href="https://tiktok.com/@job.emmanuel.dev" target="_blank" rel="noreferrer" className="social-icon tiktok">
           <FaTiktok />
+        </a>
+        <a href="https://wa.me/2349122865246" target="_blank" rel="noreferrer" className="social-icon tiktok">
+                                        <FaWhatsapp /> WhatsApp
         </a>
     </div>
   </div>

@@ -255,6 +255,8 @@
     display: flex;
     gap: 10px;
     justify-content: center;
+      flex-wrap: wrap; 
+
 }
 
 .social-btn {
@@ -268,6 +270,10 @@
     text-decoration: none;
     font-weight: bold;
     transition: opacity 0.2s;
+
+    flex: 1;
+  min-width: 100px;
+  justify-content: center;
 }
 
 .social-btn.insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -285,3 +291,15 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+.social-btn.whatsapp { 
+  background-color: #25D366; 
+}
+
+.social-btn.whatsapp:hover {
+  background-color: #128C7E;
+  opacity: 1; 
+}
+
+
+

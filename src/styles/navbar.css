@@ -141,6 +141,8 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+    flex-wrap: wrap;
+
 }
 
 .social-icon {
@@ -160,3 +162,8 @@
 .social-icon.tiktok:hover {
   color: #00f2ea; 
 }
+
+.social-icon.whatsapp:hover {
+  color: #25D366; 
+}
+
