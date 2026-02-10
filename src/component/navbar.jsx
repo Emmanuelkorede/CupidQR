@@ -60,7 +60,7 @@ export function Navbar() {
   <div className="social-links">
     <p>Follow the journey:</p>
     <div className="social-icons">
-        <a href="https://instagram.com/debugger_matrix" target="_blank" rel="noreferrer" className="social-icon insta">
+        <a href="https://instagram.com/job.emmanuel.dev" target="_blank" rel="noreferrer" className="social-icon insta">
           <FaInstagram />
         </a>
         <a href="https://tiktok.com/@job.emmanuel.dev" target="_blank" rel="noreferrer" className="social-icon tiktok">

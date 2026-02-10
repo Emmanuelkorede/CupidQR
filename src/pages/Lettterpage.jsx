@@ -149,7 +149,7 @@ function LetterPage() {
                             <div className="support-section">
                                 <p className="support-label">Follow Job Emmanuel:</p>
                                 <div className="social-row">
-                                    <a href="https://instagram.com/debugger_matrix" target="_blank" rel="noreferrer" className="social-btn insta">
+                                    <a href="https://instagram.com/job.emmanuel.dev" target="_blank" rel="noreferrer" className="social-btn insta">
                                         <FaInstagram /> Instagram
                                     </a>
                                     <a href="https://tiktok.com/@job.emmanuel.dev" target="_blank" rel="noreferrer" className="social-btn tiktok">
