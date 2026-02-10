@@ -1,0 +1,69 @@
+:root {
+  --bg-color: #fff0f3;       
+  --card-bg: #ffffff;        
+  --text-main: #590d22;      
+  --text-sub: #800f2f;       
+  --primary: #ff4d6d;        
+  --secondary: #ffb3c1;      
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --input-bg: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #1a0a0d;       /* Darkest chocolate/rose */
+  --card-bg: #2d1b1e;        /* Deep muted rose card */
+  --text-main: #ffccd5;      /* Light pink text */
+  --text-sub: #ffb3c1;       /* Medium pink text */
+  --primary: #ff758f;        /* Brighter pink for dark bg */
+  --secondary: #590d22;      /* Darker borders */
+  --nav-bg: rgba(30, 15, 18, 0.95);
+  --input-bg: #3d262a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input, textarea {
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 1px solid var(--secondary);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}

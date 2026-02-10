@@ -1,0 +1,162 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: var(--nav-bg); 
+  backdrop-filter: blur(10px); 
+  border-bottom: 1px solid var(--secondary);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--primary); 
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: -1px;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-main); 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+  color: var(--primary);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background-color: var(--card-bg); 
+  color: var(--text-main);
+  padding: 30px;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  border: 2px solid var(--secondary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-sub);
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(255, 77, 109, 0.3);
+}
+
+.tag { 
+  color: var(--text-sub); 
+  font-size: 0.9rem; 
+  margin-bottom: 15px;
+}
+
+.tech-stack {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.tech-stack span {
+  background: var(--bg-color); 
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin: 0 3px;
+  display: inline-block;
+}
+
+.social-links {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--secondary);
+}
+
+.social-links p {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.social-icon.insta:hover {
+  color: #e4405f;
+}
+
+.social-icon.tiktok:hover {
+  color: #00f2ea; 
+}
