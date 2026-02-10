@@ -41,30 +41,35 @@ export function Navbar() {
             <button className="close-btn" onClick={() => setShowProfile(false)}>
               <FaTimes />
             </button>
-            <div className="profile-header">
-              <div className="profile-avatar">JE</div>
-              <h3>Job Emmanuel</h3>
-              <p className="tag">Full-Stack Developer</p>
-            </div>
-            <div className="profile-body">
-              <p>I am a 16-year-old aspiring full-stack developer.</p>
-              <p><strong>Skills:</strong> HTML, CSS, JavaScript, React (currently learning Node.js).</p>
-              <hr />
-              <p className="tech-stack">
-                Built with: <span>React</span>, <span>Supabase</span>, and <span>QR-Code Lib</span>.
-              </p>
-              <div className="social-links">
-                <p>Follow my journey:</p>
-                <div className="social-icons">
-                    <a href="https://instagram.com/debugger_matrix" target="_blank" rel="noreferrer" className="social-icon insta">
-                    <FaInstagram />
-                    </a>
-                    <a href="https://tiktok.com/@job.emmanuel.dev" target="_blank" rel="noreferrer" className="social-icon tiktok">
-                    <FaTiktok />
-                    </a>
-                </div>
-                </div>
-            </div>
+
+<div className="profile-header">
+  <div className="profile-avatar">JE</div>
+  <h3>Job Emmanuel</h3>
+  <p className="tag">Building the future, one pixel at a time.</p>
+</div>
+
+<div className="profile-body">
+  {/* Relatable bio - keeping the age but making it punchy */}
+  <p>16-year-old developer passionate about creating digital experiences that people love.</p>
+  
+  {/* Your tech joke - much more professional/witty than a list */}
+  <p className="tech-joke">
+    <strong>Focus:</strong> Frontend Specialist (Backend currently ⏳ <code>loading...</code>)
+  </p>
+  
+  <div className="social-links">
+    <p>Follow the journey:</p>
+    <div className="social-icons">
+        <a href="https://instagram.com/debugger_matrix" target="_blank" rel="noreferrer" className="social-icon insta">
+          <FaInstagram />
+        </a>
+        <a href="https://tiktok.com/@job.emmanuel.dev" target="_blank" rel="noreferrer" className="social-icon tiktok">
+          <FaTiktok />
+        </a>
+    </div>
+  </div>
+  
+</div>
           </div>
         </div>
       )}

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { supabase } from "../superbase-client" ;
+import { supabase } from "../superbase-client";
 import { useNavigate } from "react-router-dom";
-import { FaPaperPlane, FaImage, FaMagic } from "react-icons/fa"; 
+import { FaImage, FaMagic } from "react-icons/fa"; 
 import { Navbar } from "../component/navbar";
-import '../styles/Formpage.css' ;
+import '../styles/Formpage.css';
 
 function Form() {
     const [senderName, setSenderName] = useState('');
@@ -11,6 +11,9 @@ function Form() {
     const [letterImage, setLetterImage] = useState(null);
     const [previewUrl, setPreviewUrl] = useState(null); 
     const [loading, setLoading] = useState(false);
+    
+    const [errors, setErrors] = useState({ senderName: false, message: false });
+    
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,7 +24,6 @@ function Form() {
 
     const uploadImage = async (file) => {
         const filePath = `${Date.now()}-${file.name}`;
-        
         const { error } = await supabase.storage
             .from('letters-images')
             .upload(filePath, file);
@@ -39,9 +41,15 @@ function Form() {
     };
 
     const handleGeneration = async () => {
-        if (!senderName || !message) {
-            alert("Please fill in your name and message! 💖");
-            return;
+        const newErrors = {
+            senderName: !senderName.trim(),
+            message: !message.trim()
+        };
+
+        setErrors(newErrors);
+
+        if (newErrors.senderName || newErrors.message) {
+            return; 
         }
 
         setLoading(true);
@@ -69,9 +77,7 @@ function Form() {
             console.log('Error saving letter:', error);
             alert("Something went wrong! 😢");
         } else {
-            console.log('Success:', data);
-            const newId = data[0].id;
-            navigate(`/letter/${newId}`);
+            navigate(`/letter/${data[0].id}`, { state: { fromForm: true } });
         }
         setLoading(false);
     };
@@ -95,21 +101,29 @@ function Form() {
                     <label>From:</label>
                     <input
                         type="text"
-                        onChange={(e) => setSenderName(e.target.value)}
+                        onChange={(e) => {
+                            setSenderName(e.target.value);
+                            if (errors.senderName) setErrors({...errors, senderName: false});
+                        }}
                         value={senderName}
                         placeholder="Your Name..."
-                        className="text-input"
+                        className={`text-input ${errors.senderName ? 'input-error' : ''}`}
                     />
+                    {errors.senderName && <p className="error-text">Please enter your name to continue.</p>}
                 </div>
 
                 <div className="input-group">
                     <label>Message:</label>
                     <textarea
                         value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        onChange={(e) => {
+                            setMessage(e.target.value);
+                            if (errors.message) setErrors({...errors, message: false});
+                        }}
                         placeholder="Write something sweet..."
-                        className="text-area"
+                        className={`text-area ${errors.message ? 'input-error' : ''}`}
                     />
+                    {errors.message && <p className="error-text">Don't leave your Valentine without a message!</p>}
                 </div>
 
                 <div className="input-group file-group">
@@ -126,7 +140,6 @@ function Form() {
                     />
                 </div>
 
-                
                 {previewUrl && (
                     <div className="image-preview-container">
                         <p>Preview:</p>

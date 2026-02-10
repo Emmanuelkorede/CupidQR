@@ -129,3 +129,34 @@
     cursor: not-allowed;
     transform: none;
 }
+
+.error-text {
+    color: #ff4d6d; 
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-weight: 500;
+    text-align: left;
+    animation: slideIn 0.3s ease-out;
+}
+
+.input-error {
+    border: 1.5px solid #ff4d6d !important;
+    background-color: rgba(255, 77, 109, 0.05) !important;
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.text-input, .text-area {
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
