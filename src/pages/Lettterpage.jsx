@@ -14,8 +14,7 @@ function LetterPage() {
     const [loading, setLoading] = useState(true);
     const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-    // Check if the user is the creator (passed from the Form page)
-    // To make this work, update your Form navigate to: navigate(`/letter/${id}`, { state: { fromForm: true } })
+
     const isCreator = location.state?.fromForm || false;
 
     const downloadQRCode = () => {
@@ -68,19 +67,16 @@ function LetterPage() {
 
     return (
         <> 
-            {/* 1. Only show Navbar to the Creator */}
             {isCreator && <Navbar />}
 
             <div className={`letter-page-container ${!isCreator ? 'viewer-mode' : ''}`}>
                 
-                {/* 2. Show Back Link only to Creator */}
                 {isCreator && (
-                    <Link to="/" className="back-link">
-                        <FaArrowLeft /> Edit or Make New
+                    <Link to="/form" className="back-link">
+                        <FaArrowLeft />  Make New
                     </Link>
                 )}
 
-                {/* 3. Tiny Branding for Viewer (since Navbar is hidden) */}
                 {!isCreator && (
                     <div className="viewer-brand">
                         <FaHeart /> CupidQR
@@ -107,7 +103,6 @@ function LetterPage() {
                         )}
                     </div>
 
-                    {/* 4. Creator View: Show QR and Download */}
                     {isCreator && (
                         <div className="qr-section">
                             <div className="qr-frame" id="qr-code-area">
@@ -127,7 +122,6 @@ function LetterPage() {
                         </div>
                     )}
 
-                    {/* 5. Viewer View: Show "Create Your Own" button instead of QR */}
                     {!isCreator && (
                         <div className="viewer-actions">
                             <p className="viewer-hint">Want to send a letter like this?</p>
@@ -138,7 +132,6 @@ function LetterPage() {
                     )}
                 </div>
 
-                {/* 6. Success Modal for Creator */}
                 {showSuccessModal && (
                     <div className="modal-overlay" onClick={() => setShowSuccessModal(false)}>
                         <div className="modal-content success-popup" onClick={(e) => e.stopPropagation()}>

@@ -148,7 +148,7 @@ function Form() {
                 )}
 
                 <button onClick={handleGeneration} disabled={loading} className="generate-btn">
-                    {loading ? "Creating Magic..." : (
+                    {loading ? "Processing..." : (
                         <>
                             Generate Card <FaMagic style={{ marginLeft: '8px' }} />
                         </>

@@ -76,6 +76,15 @@
     z-index: 2;
 }
 
+.steps-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+
 .step-card {
     background-color: var(--card-bg);
     padding: 30px;
